@@ -1,12 +1,13 @@
-import React from 'react'
+import React from "react";
 
-
-function Item({ data }) {
+function Item(props) {
+  const { data } = props;
   return (
-    <div className='shadow-md bg-white text-center'>
-      <p className='text-2xl p-10'>{data.title}</p>
+    <div className="shadow-md bg-white text-center">
+      <p className="text-2xl p-10">{data.setup}</p>
+      <p className="text-2xl p-10">{data.punchline}</p>
     </div>
-  )
+  );
 }
 
-export default Item
+export default Item;
