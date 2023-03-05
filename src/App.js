@@ -6,6 +6,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchAnother, getFavsFromLocalStorage } from "./actions";
 import { addFav } from "./actions";
 import { useEffect } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function App() {
   const dispatch = useDispatch();
@@ -19,7 +21,10 @@ export default function App() {
   const favs = useSelector((depo) => depo.favs);
 
   let butonTrueFalseDegeri = useSelector((depo) => depo.butonTrueFalseDegeri);
-  function addToFavs() {
+  function addToFavs(fav) {
+    // console.log("fav");
+    // console.log(fav.target);
+    // toast("app te de yazabilirdik");
     dispatch(addFav());
     // console.log(state.favs.map((fav) => fav.id));
   }
@@ -81,6 +86,7 @@ export default function App() {
                 Favorilere ekle
               </button>
             )}
+            <ToastContainer />
           </div>
         </Route>
 
